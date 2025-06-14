@@ -16,22 +16,12 @@
     <script src="lib/loadBabelModules.js"></script>
     <script src="lib/react.development.js"></script>
     <script src="lib/react-dom.development.js"></script>
-
-    <script type="text/babel" data-presets="react">
-        const { useState } = React
-
-        function App() {
-            const [txt, setTxt] = useState('Miss Books')
-            return (
-                <main>
-                    <h1>{txt}</h1>
-                </main>
-            )
-        }
-
-        const root = document.getElementById('root')
-        ReactDOM.createRoot(root).render(<App />)
-    </script>
+    <script type="text/babel" data-presets="react" src="js/services/async-storage.service.js"></script>
+    <script type="text/babel" data-presets="react" src="js/services/book.service.js"></script>
+    <script type="text/babel" data-presets="react" src="js/pages/HomePage.jsx"></script>
+    <script type="text/babel" data-presets="react" src="js/pages/AboutUs.jsx"></script>
+    <script type="text/babel" data-presets="react" src="js/pages/BookIndex.jsx"></script>
+    <script type="text/babel" data-presets="react" src="js/app.js"></script>
 </body>
 
 </html>

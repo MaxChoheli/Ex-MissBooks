@@ -5,19 +5,19 @@ body {
     background-color: #f3f3f3;
 }
 
-header {
+h1 {
     background-color: #c084fc;
     color: white;
     padding: 1rem;
+    margin: 0;
 }
 
-nav a {
-    color: white;
-    margin-right: 1rem;
-    text-decoration: none;
+.book-list {
+    list-style: none;
+    padding: 0;
 }
 
-nav a.active {
-    font-weight: bold;
-    text-decoration: underline;
+.book-preview {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
 }

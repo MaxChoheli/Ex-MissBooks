@@ -1,8 +1,8 @@
 function AboutUs() {
     return (
-        <section>
+        <section className="about-page">
             <h2>About Us</h2>
-            <p>This is a demo React app for managing books.</p>
+            <p>Miss Books is a simple book management app built with React.</p>
         </section>
     )
 }

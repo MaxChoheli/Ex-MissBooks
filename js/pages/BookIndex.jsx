@@ -1,22 +1,36 @@
-const { useEffect, useState } = React
+function BookPreview({ book }) {
+    return (
+        <article className="book-preview">
+            <h3>{book.title}</h3>
+            <p>
+                Price: {book.listPrice.amount} {book.listPrice.currencyCode}
+            </p>
+        </article>
+    )
+}
+
+function BookList({ books }) {
+    return (
+        <ul className="book-list">
+            {books.map(book => (
+                <li key={book.id}>
+                    <BookPreview book={book} />
+                </li>
+            ))}
+        </ul>
+    )
+}
 
 function BookIndex() {
-    const [books, setBooks] = useState([])
+    const [books, setBooks] = React.useState([])
 
-    useEffect(() => {
+    React.useEffect(() => {
         bookService.query().then(setBooks)
     }, [])
 
     return (
-        <section>
-            <h2>Book Index</h2>
-            <ul>
-                {books.map(book => (
-                    <li key={book.id}>
-                        {book.title} - {book.listPrice.amount} {book.listPrice.currencyCode}
-                    </li>
-                ))}
-            </ul>
+        <section className="book-index">
+            <BookList books={books} />
         </section>
     )
 }

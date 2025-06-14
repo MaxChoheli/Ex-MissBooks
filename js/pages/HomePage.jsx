@@ -1,8 +1,8 @@
 function HomePage() {
     return (
-        <section>
-            <h2>Welcome to Miss Books 📚</h2>
-            <p>Discover your next great read.</p>
+        <section className="home-page">
+            <h2>Welcome to Miss Books</h2>
+            <p>Discover, explore, and manage your favorite books with ease.</p>
         </section>
     )
 }
