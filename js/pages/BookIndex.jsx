@@ -23,14 +23,30 @@ function BookList({ books }) {
 
 function BookIndex() {
     const [books, setBooks] = React.useState([])
+    const [filterBy, setFilterBy] = React.useState('')
 
     React.useEffect(() => {
         bookService.query().then(setBooks)
     }, [])
 
+    function onSetFilter(ev) {
+        setFilterBy(ev.target.value)
+    }
+
+    const filteredBooks = books.filter(book =>
+        book.title.toLowerCase().includes(filterBy.toLowerCase())
+    )
+
     return (
         <section className="book-index">
-            <BookList books={books} />
+            <h2>Book Index</h2>
+            <input
+                type="text"
+                placeholder="Search by title"
+                value={filterBy}
+                onChange={onSetFilter}
+            />
+            <BookList books={filteredBooks} />
         </section>
     )
 }
