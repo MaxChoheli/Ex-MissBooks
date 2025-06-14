@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Miss Books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/main.css" />
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="lib/babel.js"></script>
+    <script src="lib/babel-preset.js"></script>
+    <script src="lib/loadBabelModules.js"></script>
+    <script src="lib/react.development.js"></script>
+    <script src="lib/react-dom.development.js"></script>
+
+    <script type="text/babel" data-presets="react">
+        const { useState } = React
+
+        function App() {
+            const [txt, setTxt] = useState('Miss Books')
+            return (
+                <main>
+                    <h1>{txt}</h1>
+                </main>
+            )
+        }
+
+        const root = document.getElementById('root')
+        ReactDOM.createRoot(root).render(<App />)
+    </script>
+</body>
+
+</html>
